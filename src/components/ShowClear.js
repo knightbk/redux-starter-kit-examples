@@ -1,5 +1,7 @@
 import React from 'react'
 import Clear from './Clear'
+import { connect } from 'react-redux'
+import { setClearValue } from '../redux/reducers/showClear'
 
 class ShowClear extends React.Component {
   render() {
@@ -20,5 +22,16 @@ class ShowClear extends React.Component {
     )
   }
 }
+const mapStateToProps = ({ clearButton }) => ({
+  canShowClear: clearButton.show,
+})
 
-export default ShowClear
+const mapDispatchToProps = dispatch => ({
+  showClear: () => dispatch(setClearValue(true)),
+  hideClear: () => dispatch(setClearValue(false)),
+})
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ShowClear)

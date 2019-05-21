@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { setNameValue } from '../redux/reducers'
+import { setNameValue } from '../redux/reducers/nameValue'
 
 class Input extends React.Component {
   render() {
@@ -19,11 +19,13 @@ Input.defaultProps = {
   placeholder: 'input your name here',
 }
 
-const mapStateToProps = ({ nameValue }) => ({ inputValue: nameValue })
+const mapStateToProps = ({ name }) => ({ inputValue: name.value })
+
+const mapDispatchToProps = dispatch => ({
+  inputChanged: payload => dispatch(setNameValue(payload)),
+})
 
 export default connect(
   mapStateToProps,
-  {
-    inputChanged: setNameValue,
-  }
+  mapDispatchToProps
 )(Input)

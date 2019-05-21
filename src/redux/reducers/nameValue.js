@@ -1,19 +1,17 @@
 import { createSlice } from 'redux-starter-kit'
 
-const root = createSlice({
-  slice: 'root',
+const name = createSlice({
   initialState: {
-    nameValue: '',
-    showClear: false,
+    value: '',
   },
   reducers: {
     setNameValue: (state, action) => {
-      state.nameValue = action.payload
+      state.value = action.payload
     },
   },
 })
 
-const { actions, reducer } = root
+const { actions, reducer } = name
 
 export const { setNameValue } = actions
 
