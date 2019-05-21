@@ -15,9 +15,7 @@ class ShowClear extends React.Component {
             Show Clear Button
           </button>
         )}
-        {this.props.canShowClear && (
-          <Clear clearInput={this.props.clearInput} />
-        )}
+        {this.props.canShowClear && <Clear />}
       </>
     )
   }

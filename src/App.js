@@ -10,18 +10,11 @@ class App extends Component {
     this.state = {
       clear: false,
     }
-    this.clearInput = this.clearInput.bind(this)
     this.showClear = this.showClear.bind(this)
     this.hideClear = this.hideClear.bind(this)
   }
 
   // TODO: move this logic into Redux
-  clearInput() {
-    this.setState({
-      name: '',
-    })
-  }
-
   showClear() {
     this.setState({
       clear: true,
@@ -42,7 +35,6 @@ class App extends Component {
           <Input />
         </div>
         <ShowClear
-          clearInput={this.clearInput}
           canShowClear={this.state.clear}
           showClear={this.showClear}
           hideClear={this.hideClear}

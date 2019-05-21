@@ -19,7 +19,7 @@ Input.defaultProps = {
   placeholder: 'input your name here',
 }
 
-const mapStateToProps = state => ({ inputValue: state.nameValue })
+const mapStateToProps = ({ nameValue }) => ({ inputValue: nameValue })
 
 export default connect(
   mapStateToProps,

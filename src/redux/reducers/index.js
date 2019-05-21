@@ -10,8 +10,6 @@ const root = createSlice({
     setNameValue: (state, action) => {
       state.nameValue = action.payload
     },
-
-    // TODO: clear input
   },
 })
 
