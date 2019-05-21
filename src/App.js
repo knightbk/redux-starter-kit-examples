@@ -8,24 +8,14 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      name: '',
       clear: false,
     }
-    this.inputChanged = this.inputChanged.bind(this)
     this.clearInput = this.clearInput.bind(this)
     this.showClear = this.showClear.bind(this)
     this.hideClear = this.hideClear.bind(this)
   }
 
   // TODO: move this logic into Redux
-  inputChanged(e) {
-    const val = e.target.value
-
-    this.setState({
-      name: val,
-    })
-  }
-
   clearInput() {
     this.setState({
       name: '',
@@ -49,10 +39,7 @@ class App extends Component {
       <div>
         <Hello name={this.state.name} />
         <div className="input-row">
-          <Input
-            inputValue={this.state.name}
-            inputChanged={this.inputChanged}
-          />
+          <Input />
         </div>
         <ShowClear
           clearInput={this.clearInput}
@@ -64,7 +51,5 @@ class App extends Component {
     )
   }
 }
-
-// TODO: add a provider
 
 export default App
